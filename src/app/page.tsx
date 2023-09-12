@@ -1,113 +1,244 @@
 import Image from 'next/image'
-
+import AppBar from '@/components/AppBar/AppBar'
 export default function Home() {
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="bg-white container">
+        <AppBar />
+
+        {/* Hero */}
+        <div className="flex flex-row bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  py-20">
+          <div className="flex flex-col px-6">
+            <h2 className="text-4xl font-bold mb-2 text-white">
+              You digital business card
+            </h2>
+            <h3 className="text-2xl mb-8 text-gray-200">
+              HiMyaName is a digital business card designed to help you grow your network
+            </h3> 
+            <div>
+            <button
+              className="flex bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider"
+            >
+              Try for free
+            </button>
+            </div>
+            
+          </div>
+          <div className="ml-12 hidden md:block">
+            <Image src="/images/hero_image.svg"
+              width={200}
+              height={200}
+              alt="himyname"/>
+          </div>
         </div>
-      </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        {/* <!-- Features --> */}
+        <section className="container mx-auto px-6 md:px-24 p-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 items-center flex-wrap mb-20">
+            <div className="flex flex-col">
+              <h4 className="text-3xl text-gray-800 font-bold mb-3">
+                Grow Your Network
+              </h4>
+              <p className="text-gray-600 mb-8">
+                HiMyName is a digital business card that can be shared easily with anyone you meet. Share your contact through a weblink or QR code. Your contact can be saved directly to your phone, without needing any app. 
+              </p>
+            </div>
+            <div className="flex justify-center px-8">
+              <Image src="/images/network.svg"
+                width={300}
+                height={300}
+                alt="grow your network"/>
+              </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 items-center flex-wrap mb-20">
+            <div className="order-last md:order-first flex justify-center px-8">
+              <Image src="/images/business.svg"
+                width={300}
+                height={300}
+                alt="make great first impression"/>
+            </div>
+            <div className="flex flex-col">
+              <h4 className="text-3xl text-gray-800 font-bold mb-3">
+                Make a Great First Impression
+              </h4>
+              <p className="text-gray-600 mb-8">
+                Network smarter with digital business card. Stand out from the crowd by going digital, you'll sure to make great first impression with your customer.
+              </p>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 items-center flex-wrap mb-20">
+            <div className="flex flex-col">
+              <h4 className="text-3xl text-gray-800 font-bold mb-3">
+                Go green, Go Paperless
+              </h4>
+              <p className="text-gray-600 mb-8">
+                With HiMyName, you're not only embracing the future of digital technology, but you are also contributing toward greener future. Less paper, less trees being cut, less waste  
+              </p>
+            </div>
+            <div className="flex justify-center px-8">
+              <Image src="/images/environment.svg"
+                width={300}
+                height={300}
+                alt="go green"/>
+            </div>
+          </div>
+        </section>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        {/* <!-- Testimonials --> */}
+        <section className="bg-gray-100">
+          <div className="container mx-auto px-6 py-20">
+            <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">
+              Testimonials
+            </h2>
+            <div className="flex flex-wrap">
+              <div className="w-full md:w-1/3 px-2 mb-4">
+                <div className="bg-white rounded shadow py-2">
+                  <p className="text-gray-800 text-base px-6 mb-5">
+                    Monitoring and tracking my health vitals anywhere I go and on
+                    any platform I use has never been easier.
+                  </p>
+                  <p className="text-gray-500 text-xs md:text-sm px-6">
+                    John Doe
+                  </p>
+                </div>
+              </div>
+              <div className="w-full md:w-1/3 px-2 mb-4">
+                <div className="bg-white rounded shadow py-2">
+                  <p className="text-gray-800 text-base px-6 mb-5">
+                    As an Athlete, this is the perfect product for me. I wear my
+                    Smart Health Monitoring Wristwatch everywhere I go, even in the
+                    bathroom since it's waterproof.
+                  </p>
+                  <p className="text-gray-500 text-xs md:text-sm px-6">
+                    Jane Doe
+                  </p>
+                </div>
+              </div>
+              <div className="w-full md:w-1/3 px-2 mb-4">
+                <div className="bg-white rounded shadow py-2">
+                  <p className="text-gray-800 text-base px-6 mb-5">
+                    I don't regret buying this wearble gadget. One of the best
+                    gadgets I own!.
+                  </p>
+                  <p className="text-gray-500 text-xs md:text-sm px-6">
+                    James Doe
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* <!--Call to Action--> */}
+        <section >
+          <div className="container mx-auto px-6 text-center py-20">
+            <h2 className="mb-6 text-4xl font-bold text-center text-white">
+              Limited in Stock
+            </h2>
+            <h3 className="my-4 text-2xl text-white">
+              Get yourself the Smart Health Monitoring Wristwatch!
+            </h3>
+            <button
+              className="bg-white font-bold rounded-full mt-6 py-4 px-8 shadow-lg uppercase tracking-wider"
+            >
+              Pre Order
+            </button>
+          </div>
+        </section>
+        
+        {/* <!--Footer--> */}
+        <footer className="bg-gray-100">
+          <div className="container mx-auto px-6 pt-10 pb-6">
+            <div className="flex flex-wrap">
+              <div className="w-full md:w-1/4 text-center md:text-left ">
+                <h5 className="uppercase mb-6 font-bold">Links</h5>
+                <ul className="mb-4">
+                  <li className="mt-2">
+                    <a
+                      href="#"
+                      className="hover:underline text-gray-600 hover:text-orange-500"
+                      >FAQ</a>
+                  </li>
+                  <li className="mt-2">
+                    <a
+                      href="#"
+                      className="hover:underline text-gray-600 hover:text-orange-500"
+                      >Help</a>
+                  </li>
+                  <li className="mt-2">
+                    <a
+                      href="#"
+                      className="hover:underline text-gray-600 hover:text-orange-500"
+                      >Support</a>
+                  </li>
+                </ul>
+              </div>
+              <div className="w-full md:w-1/4 text-center md:text-left ">
+                <h5 className="uppercase mb-6 font-bold">Legal</h5>
+                <ul className="mb-4">
+                  <li className="mt-2">
+                    <a
+                      href="#"
+                      className="hover:underline text-gray-600 hover:text-orange-500"
+                      >Terms</a>
+                  </li>
+                  <li className="mt-2">
+                    <a
+                      href="#"
+                      className="hover:underline text-gray-600 hover:text-orange-500"
+                      >Privacy</a>
+                  </li>
+                </ul>
+              </div>
+              <div className="w-full md:w-1/4 text-center md:text-left ">
+                <h5 className="uppercase mb-6 font-bold">Social</h5>
+                <ul className="mb-4">
+                  <li className="mt-2">
+                    <a
+                      href="#"
+                      className="hover:underline text-gray-600 hover:text-orange-500"
+                      >Facebook</a>
+                  </li>
+                  <li className="mt-2">
+                    <a
+                      href="#"
+                      className="hover:underline text-gray-600 hover:text-orange-500"
+                      >Linkedin</a>
+                  </li>
+                  <li className="mt-2">
+                    <a
+                      href="#"
+                      className="hover:underline text-gray-600 hover:text-orange-500"
+                      >Twitter</a>
+                  </li>
+                </ul>
+              </div>
+              <div className="w-full md:w-1/4 text-center md:text-left ">
+                <h5 className="uppercase mb-6 font-bold">Company</h5>
+                <ul className="mb-4">
+                  <li className="mt-2">
+                    <a
+                      href="#"
+                      className="hover:underline text-gray-600 hover:text-orange-500"
+                      >Official Blog</a>
+                  </li>
+                  <li className="mt-2">
+                    <a
+                      href="#"
+                      className="hover:underline text-gray-600 hover:text-orange-500"
+                      >About Us</a>
+                  </li>
+                  <li className="mt-2">
+                    <a
+                      href="#"
+                      className="hover:underline text-gray-600 hover:text-orange-500"
+                      >Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+    </div> 
   )
 }
